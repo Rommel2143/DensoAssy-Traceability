@@ -4,19 +4,17 @@ Public Class sub_mainframe
 
 
 
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs)
         con.Close()
         Application.Exit()
     End Sub
 
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        display_form(New Login)
-        Me.Close()
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs)
         Dim pcname As New device_info
         pcname.ShowDialog()
 
@@ -26,11 +24,19 @@ Public Class sub_mainframe
 
     End Sub
 
-    Private Sub PartsScanningToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PartsScanningToolStripMenuItem.Click
-        display_formsub(scan_parts, "Parts")
+    Private Sub PartsScanningToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub FGScanningToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGScanningToolStripMenuItem.Click
-        display_formsub(scan_fg, "FG")
+    Private Sub FGScanningToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub sub_mainframe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        display_formsub(select_item)
     End Sub
 End Class

@@ -33,6 +33,7 @@ Partial Class Register_PC
         Me.txtpcname = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_line = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,6 +42,7 @@ Partial Class Register_PC
         Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 10
+        Me.Guna2Panel1.Controls.Add(Me.txt_line)
         Me.Guna2Panel1.Controls.Add(Me.Label4)
         Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
@@ -90,7 +92,7 @@ Partial Class Register_PC
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
         Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(344, 324)
+        Me.Guna2Button2.Location = New System.Drawing.Point(347, 384)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.Size = New System.Drawing.Size(122, 37)
         Me.Guna2Button2.TabIndex = 202
@@ -109,7 +111,7 @@ Partial Class Register_PC
         Me.txtpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtpassword.IconLeft = CType(resources.GetObject("txtpassword.IconLeft"), System.Drawing.Image)
         Me.txtpassword.IconLeftSize = New System.Drawing.Size(30, 30)
-        Me.txtpassword.Location = New System.Drawing.Point(299, 255)
+        Me.txtpassword.Location = New System.Drawing.Point(302, 315)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpassword.PlaceholderText = ""
@@ -131,7 +133,7 @@ Partial Class Register_PC
         Me.txtuser.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtuser.IconLeft = CType(resources.GetObject("txtuser.IconLeft"), System.Drawing.Image)
         Me.txtuser.IconLeftSize = New System.Drawing.Size(30, 30)
-        Me.txtuser.Location = New System.Drawing.Point(299, 206)
+        Me.txtuser.Location = New System.Drawing.Point(302, 266)
         Me.txtuser.Name = "txtuser"
         Me.txtuser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtuser.PlaceholderText = ""
@@ -182,6 +184,26 @@ Partial Class Register_PC
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Philippines TRC Inc."
         '
+        'txt_line
+        '
+        Me.txt_line.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_line.DefaultText = ""
+        Me.txt_line.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_line.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_line.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_line.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_line.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_line.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_line.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_line.IconLeftSize = New System.Drawing.Size(30, 30)
+        Me.txt_line.Location = New System.Drawing.Point(302, 210)
+        Me.txt_line.Name = "txt_line"
+        Me.txt_line.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_line.PlaceholderText = "Line number..."
+        Me.txt_line.SelectedText = ""
+        Me.txt_line.Size = New System.Drawing.Size(137, 38)
+        Me.txt_line.TabIndex = 207
+        '
         'Register_PC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,4 +230,5 @@ Partial Class Register_PC
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txt_line As Guna.UI2.WinForms.Guna2TextBox
 End Class

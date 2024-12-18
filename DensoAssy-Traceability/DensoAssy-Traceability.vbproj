@@ -161,12 +161,6 @@
     <Compile Include="main\device_info.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\Login.designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
-    </Compile>
-    <Compile Include="main\Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="main\Mainframe.designer.vb">
       <DependentUpon>Mainframe.vb</DependentUpon>
     </Compile>
@@ -202,12 +196,6 @@
     <Compile Include="main\sub_mainframe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="parts scanning\parts_scan.Designer.vb">
-      <DependentUpon>parts_scan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="parts scanning\parts_scan.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="parts scanning\scan_fg.Designer.vb">
       <DependentUpon>scan_fg.vb</DependentUpon>
     </Compile>
@@ -220,13 +208,22 @@
     <Compile Include="parts scanning\scan_parts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="parts scanning\select_item.Designer.vb">
+      <DependentUpon>select_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="parts scanning\select_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="parts scanning\Trace_item.Designer.vb">
+      <DependentUpon>Trace_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="parts scanning\Trace_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="main\device_info.resx">
       <DependentUpon>device_info.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="main\Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main\Mainframe.resx">
       <DependentUpon>Mainframe.vb</DependentUpon>
@@ -243,14 +240,17 @@
     <EmbeddedResource Include="main\sub_mainframe.resx">
       <DependentUpon>sub_mainframe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="parts scanning\parts_scan.resx">
-      <DependentUpon>parts_scan.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="parts scanning\scan_fg.resx">
       <DependentUpon>scan_fg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="parts scanning\scan_parts.resx">
       <DependentUpon>scan_parts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parts scanning\select_item.resx">
+      <DependentUpon>select_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parts scanning\Trace_item.resx">
+      <DependentUpon>Trace_item.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

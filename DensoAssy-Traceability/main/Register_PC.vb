@@ -6,25 +6,16 @@ Public Class Register_PC
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        If txtuser.Text = "PTRCI" And txtpassword.Text = "redhorsE" Then
+        If txtuser.Text = "PTRCI" And txtpassword.Text = "redhorsE" And txt_line.Text IsNot String.Empty Then
+
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("INSERT INTO `trc_device`(`PCname`, `PCmac`, `location`) VALUES ('" & PCname & "','" & PCmac & "','PAINTING')", con)
+            Dim cmdselect As New MySqlCommand("INSERT INTO `trc_device`(`PCname`, `PCmac`, `location`,remarks) VALUES ('" & PCname & "','" & PCmac & "','DENSO','" & txt_line.Text & "')", con)
             dr = cmdselect.ExecuteReader
-            Dim result As DialogResult = MessageBox.Show("Machine Verified!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim result As DialogResult = MessageBox.Show("Machine Verified, Please restart application!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             If result = DialogResult.OK Then
-                With Login
-                    .Refresh()
-                    .TopLevel = False
-                    Mainframe.Panel1.Controls.Add(Login)
-
-                    .txtbarcode.Enabled = True
-                    .txtbarcode.Focus()
-                    .BringToFront()
-                    .Show()
-                    PClocation = "PAINTING"
-                End With
+                Application.Exit()
             End If
         Else
             MessageBox.Show("Invalid Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

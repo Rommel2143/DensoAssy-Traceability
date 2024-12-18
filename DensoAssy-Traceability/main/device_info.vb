@@ -3,7 +3,7 @@ Public Class device_info
     Private Sub device_info_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         con.Close()
         con.Open()
-        Dim selectpc As New MySqlCommand("Select * from trc_device", con)
+        Dim selectpc As New MySqlCommand("Select * from trc_device WHERE PCname='" & PCname & "'", con)
         dr = selectpc.ExecuteReader
         If dr.Read = True Then
             lbl_devicename.Text = dr.GetString("PCname")

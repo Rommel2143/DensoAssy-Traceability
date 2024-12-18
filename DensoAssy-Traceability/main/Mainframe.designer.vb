@@ -42,7 +42,7 @@ Partial Class Mainframe
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Mainframe"
-        Me.Text = "Rubber System"
+        Me.Text = "Retainer Assy- Parts Traceability"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

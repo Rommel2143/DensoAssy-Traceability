@@ -1,10 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Net.NetworkInformation
+Imports ClosedXML.Excel
 Module Module1
 
     Public Function connection() As MySqlConnection
-        Return New MySqlConnection("server=PTI-027s;user id=Inventory;password=inventory123@;database=trcsystem")
-        'Return New MySqlConnection("server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem")
+        'Return New MySqlConnection("server=PTI-027s;user id=Inventory;password=inventory123@;database=trcsystem")
+        Return New MySqlConnection("server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem")
     End Function
     Public con As MySqlConnection = connection()
     Public result As String
@@ -15,12 +16,13 @@ Module Module1
 
     'credentials for log in
     Public fname As String
-    Public idno As String
+    Public idno As String = "03200728"
     Public user_level As Integer
     Public designation As String
     Public PCname As String = Environment.MachineName
     Public PCmac As String = GetMacAddress()
-    Public PClocation As String
+    ' Public PClocation As String
+    Public PCline As String
 
     Public date1 As String = Date.Now.ToString("MMMM dd, yyyy")
     Public datedb As String = Date.Now.ToString("yyyy-MM-dd")
@@ -28,6 +30,48 @@ Module Module1
 
     Public report_cmlqr As String
 
+
+    Public Sub export_excel(datagrid As Object)
+        Try
+            If datagrid.Rows.Count > 0 Then
+                Dim dt As New DataTable()
+
+                ' Adding the Columns
+                For Each column As DataGridViewColumn In datagrid.Columns
+                    dt.Columns.Add(column.HeaderText, column.ValueType)
+                Next
+
+                ' Adding the Rows
+                For Each row As DataGridViewRow In datagrid.Rows
+                    If Not row.IsNewRow Then
+                        dt.Rows.Add()
+                        For Each cell As DataGridViewCell In row.Cells
+                            dt.Rows(dt.Rows.Count - 1)(cell.ColumnIndex) = cell.Value.ToString()
+                        Next
+                    End If
+                Next
+
+                ' Save the data to an Excel file
+                Using sfd As New SaveFileDialog()
+                    sfd.Filter = "Excel Workbook|*.xlsx"
+                    sfd.Title = "Save an Excel File"
+                    sfd.ShowDialog()
+
+                    If sfd.FileName <> "" Then
+                        Using wb As New XLWorkbook()
+                            wb.Worksheets.Add(dt, "Sheet1")
+                            wb.SaveAs(sfd.FileName)
+                        End Using
+                        MessageBox.Show("Data successfully exported to Excel.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                End Using
+            Else
+                MessageBox.Show("No data available to export.", "Export Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
     Function GetMacAddress() As String
         Dim macAddress As String = ""
@@ -52,14 +96,14 @@ Module Module1
     End Function
 
 
-    Public Sub display_formsub(form As Form, tittle As String)
+    Public Sub display_formsub(form As Form)
         With form
             .Refresh()
             .TopLevel = False
             sub_mainframe.Panel1.Controls.Add(form)
             .BringToFront()
             .Show()
-            sub_mainframe.lbl_tittle.Text = tittle
+
         End With
     End Sub
 
