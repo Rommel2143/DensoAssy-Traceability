@@ -73,7 +73,8 @@ Public Class scan_fg
 
                 If dr.Read = True Then
                     If dr.GetInt32("posted") = 0 Then
-                        reload("SELECT `qrcode`,`qty`,`timein` FROM `denso_line_traceability` WHERE datein =CURDATE() and line='" & PCline & "'", datagrid1)
+                        reload("SELECT `qrcode`,`qty`,`timein` FROM `denso_line_traceability` WHERE datein =CURDATE() and line='" & PCline & "'
+                                GROUP BY qrcode", datagrid1)
                         errorpanel.Hide()
                         txtqr.Enabled = True
                         txtqr.Focus()
@@ -128,7 +129,7 @@ Public Class scan_fg
                 count += 1
             End While
 
-            If count >= 3 Then
+            If count >= 2 Then
                 errorpanel.Hide()
                 If String.IsNullOrEmpty(txt_qty.Text) Then
                     txtqr.Enabled = False
@@ -146,5 +147,7 @@ Public Class scan_fg
             con.Close()
         End Try
     End Sub
+
+
 
 End Class

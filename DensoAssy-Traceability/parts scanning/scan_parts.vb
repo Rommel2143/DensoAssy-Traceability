@@ -245,10 +245,10 @@ Public Class scan_parts
     Private Sub scan_parts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reloadtable(datagrid_tape, 1)
         reloadtable(datagrid_bezel, 2)
-        reloadtable(datagrid_retainer, 2)
+        reloadtable(datagrid_retainer, 3)
         Timer_retainer.Start()
         Timer_tape.Start()
-        Timer_bezel.Start()
+        ' Timer_bezel.Start()
     End Sub
 
     Private Sub cmb_line_SelectedIndexChanged(sender As Object, e As EventArgs)
